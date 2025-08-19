@@ -1,5 +1,12 @@
 twig:
     file_name_pattern: '*.twig'
+    globals:
+        site:
+            name: '%site.name_site%'
+            publisher: '%site.name_publisher%'
+            address: '%site.address%'
+            phone: '%site.phone%'
+            email: '%site.email%'
 
 when@test:
     twig:

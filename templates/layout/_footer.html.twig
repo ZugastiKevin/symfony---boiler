@@ -1,0 +1,23 @@
+<footer class="container" id="footer">
+    <div class="footer">
+        <div class="logo-footer-container">
+            <a href="{{ path('home') }}"><img src="{{ asset('images/logo/!Change-me!.png') }}" alt="{{ site.name }}"></a>
+        </div>
+        <div class="footer-content">
+            <div class="footer-list">
+                <h4>À propos</h4>
+                <ul>
+                    <li><a href="{{ path('mentions_legales') }}">Mentions Légales</a></li>
+                    <li><a href="{{ path('confidentialite') }}">Politique de Confidentialité</a></li>
+                    <li><a href="{{ path('cgu') }}">Conditions Générales d'Utilisation</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>{{ site.phone }}</p>
+                <p>{{ site.address }}</p>
+            </div>
+        </div>
+        <p>Copyright &copy {{ site.name }} - 2025 </p>
+    </div>
+</footer>

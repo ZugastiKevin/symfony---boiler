@@ -1,0 +1,113 @@
+@use "../abstracts/variables" as v;
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .header {
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .navbar_menu {
+            .navbar_list_container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+
+                .navbar_list {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .dropdown {
+                    position: relative;
+                    display: none;
+                    margin-right: 5rem;
+                    transition: display 5s ease-out;
+                    i {
+                        color: v.$color-secondary;
+                    };
+                };
+                .dropdown:hover {
+                    cursor: pointer;
+                };
+                .dropdown-content {
+                    position: absolute;
+                    z-index: 1;
+                    display: none;
+                    flex-direction: column;
+                    min-width: 10rem;
+                    padding: 0.8rem 1rem;
+                    border: 3px solid v.$color-secondary;
+                    border-radius: 1rem;
+                    background-color: v.$color-primary;
+                    box-shadow: 0 10px 15px 12px v.$color-accent;
+                    transform: translate(-45%, 2%);
+
+                    li a:hover {
+                        border-bottom: 1px solid v.$color-secondary;
+                    }
+                };
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1921px) {
+    #header {
+        .header {
+
+        }
+    }
+}
+
+@media screen and (max-width:1250px) {
+    #header {
+        .header {
+
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #header {
+        .header {
+            .navbar__menu {
+                .navbar_list_container {
+                    .navbar_list {
+                        display: none;
+                    }
+                    .dropdown {
+                        position: relative;
+                        display: inherit;
+                    };
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:525px) {
+    #header {
+        .header {
+
+        }
+    }
+}
+
+@media screen and (max-width:453px) {
+    #header {
+        .header {
+
+        }
+    }
+}

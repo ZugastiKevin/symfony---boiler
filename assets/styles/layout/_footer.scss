@@ -1,0 +1,110 @@
+@use "../abstracts/variables" as v;
+
+#footer {
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .footer {
+        margin-top: 3rem;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .logo-footer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 13%;
+            transition: all 0.2s ease-in-out;
+        }
+        .logo-footer-container:hover {
+            //transform: rotate(-8deg);
+        }
+        .footer-content {
+            margin-top: 1rem;
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15rem;
+
+            .footer-list {
+                li a:hover {
+                    border-bottom: 1px solid v.$color-white;
+                }
+            }
+
+            .footer-contact::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                height: 100%;
+                border-left: 2px solid v.$color-accent;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1921px) {
+    #footer {
+        .footer {
+            .logo-footer-container {
+                width: 10%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1250px) {
+    #footer {
+        .footer {
+
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #footer {
+        .footer {
+            width: 95%;
+            text-align: center;
+
+            .logo-footer-container {
+                width: 20%;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+
+                .footer-contact::before {
+                    content: "";
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:525px) {
+    #footer {
+        .footer {
+
+        }
+    }
+}
+
+@media screen and (max-width:453px) {
+    #footer {
+        .footer {
+            .logo-footer-container {
+                width: 45%;
+            }
+        }
+    }
+}

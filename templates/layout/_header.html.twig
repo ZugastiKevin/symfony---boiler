@@ -1,0 +1,20 @@
+<header class="container" id="header">
+    <div class="header">
+        <div class="logo-container">
+            {#<a href="{{ path('home', {'_locale': app.request.locale}) }}"><img src="{{ asset('images/logo/!Change-me!.png') }}" alt="{{ site.name }}"></a>#}
+        </div>
+        <nav class="navbar_menu">
+            <div class="navbar_list_container">
+                <ul class="navbar_list">
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                </ul>
+                <div class="dropdown">
+                    <i class="fa-solid fa-bars"></i>
+                    <ul class="dropdown-content">
+                        <li><a href="{{ path('home') }}">Accueil</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

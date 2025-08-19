@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Politique de confidentialité{% endblock %}
+
+{% block body %}
+    <section class="legal-page">
+        <h2>Politique de confidentialité</h2>
+
+        <p>Dernière mise à jour : {{ "now"|date("d/m/Y") }}</p>
+
+        <h3>1. Introduction</h3>
+        <p>Nous attachons une grande importance à la confidentialité de vos données.</p>
+        <p>Cette politique de confidentialité explique quelles données nous collectons, pourquoi et comment nous les utilisons.</p>
+
+        <h3>2. Données personnelles collectées</h3>
+        <ul>
+            <li>Adresse email (lors de l'inscription)</li>
+            <li>Pseudonyme / nom d'utilisateur</li>
+            <li>Mot de passe (chiffré)</li>
+            <li>Données relatives à !Chamge-me!, !Chamge-me!, et !Chamge-me!</li>
+            <li>Adresse IP (pour des raisons de sécurité)</li>
+        </ul>
+
+        <h3>3. Utilisation des données</h3>
+        <p>Vos données sont utilisées pour :</p>
+        <ul>
+            <li>Créer et gérer votre compte utilisateur</li>
+            <li>Afficher vos !Chamge-me!</li>
+            <li>Permettre l’ajout de !Chamge-me!</li>
+            <li>Vous envoyer des emails de notification (si applicable)</li>
+            <li>Prévenir les fraudes et garantir la sécurité du site</li>
+        </ul>
+
+        <h3>4. Cookies</h3>
+        <p>Le site utilise des cookies uniquement pour le bon fonctionnement du service (session, préférences...). Aucun cookie publicitaire n’est utilisé.</p>
+
+        <h3>5. Partage des données</h3>
+        <p>Nous ne partageons jamais vos données avec des tiers, sauf obligation légale (ex : sur demande d’une autorité judiciaire).</p>
+
+        <h3>6. Durée de conservation</h3>
+        <p>Vos données sont conservées tant que votre compte est actif. Vous pouvez à tout moment demander leur suppression.</p>
+
+        <h3>7. Sécurité</h3>
+        <p>Nous mettons en œuvre toutes les mesures nécessaires pour garantir la sécurité de vos données (chiffrement, protection des accès, mises à jour régulières...).</p>
+
+        <h3>8. Vos droits</h3>
+        <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+        <ul>
+            <li>Droit d’accès</li>
+            <li>Droit de rectification</li>
+            <li>Droit à l’effacement (droit à l’oubli)</li>
+            <li>Droit à la portabilité</li>
+            <li>Droit d’opposition</li>
+        </ul>
+        <p>Pour exercer ces droits, vous pouvez nous contacter à : {{ site.address }} <- par courrier ou aux {{ site.phone }}
+
+        <h3>9. Contact</h3>
+        <p>Pour toute question concernant cette politique de confidentialité, vous pouvez nous contacter à : {{ site.address }} <- par courrier ou aux {{ site.phone }}
+    </section>
+{% endblock %}

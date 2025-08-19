@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conditions Générales d'Utilisation{% endblock %}
+
+{% block body %}
+    <section class="legal-page">
+        <h2>Conditions Générales d'Utilisation (CGU)</h2>
+
+        <h3>1. Objet</h3>
+        <p>Les présentes Conditions Générales d’Utilisation ont pour objet de définir les modalités d’accès et d’utilisation du site <strong>{{ site.name }}</strong>.</p>
+
+        <h3>2. Acceptation</h3>
+        <p>En accédant au site, l’utilisateur accepte, sans réserve, les présentes CGU dans leur intégralité.</p>
+
+        <h3>3. Accès au site</h3>
+        <p>Le site est accessible gratuitement à tout utilisateur disposant d’un accès à internet. Certains services peuvent nécessiter la création d’un compte utilisateur.</p>
+
+        <h3>4. Compte utilisateur</h3>
+        <p>L’utilisateur s’engage à fournir des informations exactes lors de son inscription. Il est responsable de la confidentialité de ses identifiants et de toute activité liée à son compte.</p>
+
+        <h3>5. Comportement de l'utilisateur</h3>
+        <p>Tout comportement illégal, injurieux, ou portant atteinte à l’intégrité du site ou d’un autre utilisateur entraînera la suspension ou la suppression du compte.</p>
+
+        <h3>6. Propriété intellectuelle</h3>
+        <p>Les contenus du site (textes, images, design, etc.) sont protégés par le droit d’auteur. Toute reproduction sans autorisation est strictement interdite.</p>
+
+        <h3>7. Responsabilité</h3>
+        <p>Le site s'efforce d’assurer l’exactitude des informations, mais ne peut garantir l’absence d’erreurs. Il décline toute responsabilité quant à l’utilisation du site ou des informations diffusées.</p>
+
+        <h3>8. Données personnelles</h3>
+        <p>Les données collectées sont traitées conformément à notre <a href="{{ path('confidentialite') }}">Politique de confidentialité</a>.</p>
+
+        <h3>9. Modification des CGU</h3>
+        <p>Le site se réserve le droit de modifier les présentes CGU à tout moment. L’utilisateur sera informé de tout changement significatif.</p>
+
+        <h3>10. Loi applicable</h3>
+        <p>Les présentes CGU sont régies par la loi française. En cas de litige, les tribunaux français seront seuls compétents.</p>
+    </section>
+{% endblock %}

@@ -15,6 +15,14 @@
 ###< phpunit/phpunit ###
 
 ###> symfony/asset-mapper ###
-/public/assets/
+#/public/assets/
 /assets/vendor/
+/public/images/upload/*
 ###< symfony/asset-mapper ###
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+# /public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###

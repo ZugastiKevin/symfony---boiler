@@ -1,0 +1,15 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-499ad6.js",
+        "/build/app.js"
+      ],
+      "css": [
+        "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_htmx_org_dist_htmx_e-499ad6.css",
+        "/build/app.css"
+      ]
+    }
+  }
+}
