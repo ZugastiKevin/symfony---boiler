@@ -1,0 +1,402 @@
+@use "sass:color";
+@use "../abstracts/variables" as v;
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-6px); }
+    66% { transform: translateX(6px); }
+    100% { transform: translateX(0);}
+}
+
+@mixin form-basique($width: 70%, $height: 650px) {
+    position: relative;
+    width: $width;
+    max-width: 1200px;
+    max-height: $height;
+    display: flex;
+    flex-direction: column;
+    color: v.$color-black;
+    //background-image: url("");
+    background-size: 453px 100%;
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+
+@mixin warming() {
+    .warming {
+        margin-bottom: 5rem;
+        min-width: 360px;
+        width: 100%;
+        max-width: 675px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .alert {
+            background-color: color.adjust(v.$color-secondary, $lightness: -10%);
+            padding: 1rem;
+            border-radius: 6px 6px 0 0;
+            border: solid 3px v.$color-primary;
+            text-align: center;
+        }
+
+        .mb-3 {
+            width: 100%;
+            padding-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            height: 64px;
+            //background-image: url("");
+            background-size: calc(100% + 10px) 100%;
+            background-position: -5px;
+            font-family: v.$font-titre;
+            text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
+            font-size: 0.95rem;
+            text-align: center;
+            color: v.$color-primary;
+            span {
+                width: 60%;
+            }
+            a {
+                color: v.$color-white;
+            }
+        }
+    }
+}
+
+@mixin mix($width: 50%, $height: 650px) {
+    .mix {
+        position: relative;
+        width: $width;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+
+        figure {
+            width: 212px;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            margin: 0;
+            img {
+                min-height: 450px;
+                max-height: $height;
+            }
+        }
+
+        .headline {
+            position: absolute;
+            top: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 1rem;
+            width: 70%;
+
+            mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+            mask-repeat: no-repeat;
+            mask-size: 100% 100%;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: 100% 100%;
+
+            .text-headline {
+                color: v.$color-primary;
+                text-shadow: 2px 2px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
+                font-size: 1.6rem;
+                text-transform: uppercase;
+                letter-spacing: 0.4rem;
+            }
+            .text-subheadline {
+                color: v.$color-error;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.14rem;
+                text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
+            }
+        }
+    }
+}
+
+@mixin input-label-effect() {
+    span:first-child {
+        padding-top: 5%;
+    }
+    span {
+        width: 100%;
+        display: block;
+        margin-bottom: 1.15rem;
+        position: relative;
+        text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
+
+        label {
+            width: 100%;
+            height: 64px;
+            padding-top: 12px;
+            color: v.$color-primary;
+            font-family: v.$font-titre;
+            font-size: 0.75rem;
+            letter-spacing: .08rem;
+            text-transform: uppercase;
+            display: inline-block;
+            transform: translateY(1.1rem);
+            //background-image: url("");
+            background-size: calc(100% + 10px) 100%;
+            background-position: -5px;
+            text-align: center;
+            transition: 0.15s ease;
+            span:last-child {
+                margin: -5px 0 0;
+                padding: 0 4rem 0;
+            }
+        }
+
+        .input-reset-inline {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            input {
+                flex: 1 1 auto;
+            }
+        }
+
+        input {
+            flex: 1;
+            width: 100%;
+            text-align: center;
+            padding-top: 3px;
+            border: none;
+            border-bottom: 2px solid v.$color-accent;
+            font-family: v.$font-titre;
+            color: v.$color-accent;
+            text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
+            background-color: transparent;
+            //background-image: url();
+            background-size: contain;
+            background-repeat: round;
+            outline: none;
+            resize: none;
+        }
+        input:focus-visible {
+            outline: none;
+            border-bottom-color: color.adjust(v.$color-primary, $lightness: 20%);
+        }
+    }
+
+    input[type="file"] {
+        &::-webkit-file-upload-button {
+            background-color: transparent;
+            color: v.$color-accent;
+            border: none;
+            padding: 0.3rem 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &::-webkit-file-upload-button:hover {
+            background-color: v.$color-accent;
+            color: v.$color-white;
+        }
+
+        &::file-selector-button {
+            padding: 0.3rem 0.5rem;
+            background-color: transparent;
+            color: v.$color-accent;
+            border: 1px solid v.$color-accent;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &::file-selector-button:hover {
+            background-color: v.$color-accent;
+            color: v.$color-white;
+        }
+    }
+
+    input[type=submit] {
+        margin: 0 auto 25px;
+        background-color: transparent;
+        color: v.$color-white;
+        border: none;
+        padding: 10px 2rem 14px;
+        font-family: v.$font-titre;
+        cursor: pointer;
+        transition: background 0.3s;
+        text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black;
+    }
+
+    .inputs--filled label {
+        transform: translate(0, 0);
+    }
+
+    .inputs--invalid input,
+    .inputs--invalid select,
+    .inputs--invalid textarea {
+        border-bottom: 4px solid v.$color-error;
+        color: v.$color-error;
+        animation: shake 0.3s both ease-in-out;
+    }
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 1rem;
+    @include warming();
+    .form {
+        @include form-basique();
+
+        .form-content {
+            position: relative;
+            width: 100%;
+            display: flex;
+            padding-bottom: 10rem;
+
+            @include mix();
+
+            .all-form {
+                overflow: hidden;
+                padding: 5%;
+                position: relative;
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                //background-image: url("");
+                background-size: calc(100% + 10px) 100%;
+                background-repeat: no-repeat;
+                background-position: -5px;
+
+                @include input-label-effect();
+
+                .form-group {
+                    .form-error {
+                        text-align: center;
+                        color: v.$color-error;
+                        font-family: v.$font-titre;
+
+                        ul {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1991px) {
+    #form {
+        .form {
+            width: 35%;
+        }
+    }
+}
+
+@media screen and (max-width:1000px) {
+    #form {
+        .form {
+            width: 95%;
+            .mix {
+                .headline {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #form {
+        padding: 0;
+        .form {
+            width: 75%;
+            flex-direction: column;
+            background-size: 100% 80%;
+            max-height: 750px;
+
+
+            .form-content {
+                flex-direction: column;
+                .mix {
+                    width: 100%;
+                }
+
+                .all-form {
+                    padding: 10%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    span {
+                        text-align: center;
+
+                        input {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    #form {
+        .form {
+            width: 100%;
+            .form-content {
+                .all-form {
+                    .form-group {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        .form-error {
+                            width: 95%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:360px) {
+    #form {
+        .form {
+            .form-content {
+                .all-form {
+                    padding: 0;
+
+                    span:first-child {
+                        padding-top: 14%;
+                    }
+                    span {
+                        padding: 0 10%;
+                    }
+                    input[type=submit] {
+                        margin-bottom: 80px;
+                    }
+                }
+            }
+        }
+    }
+}

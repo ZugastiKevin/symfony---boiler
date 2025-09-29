@@ -1,0 +1,84 @@
+@use "../abstracts/variables" as v;
+
+.cta {
+    padding: 1rem 1.5rem;
+    color: v.$color-white;
+    background-color: v.$color-primary;
+    border: solid 3px v.$color-primary;
+    border-radius: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.cta:hover {
+    background-color: v.$color-secondary;
+}
+
+.btn {
+    //background-image: url("");
+    background-size: contain;
+    background-repeat: round;
+}
+
+.btn-nav {
+    padding: 10px 1rem 14px;
+    //background-image: url("");
+    background-size: cover;
+    background-repeat: round;
+}
+
+.btn-home {
+    //background-image: url("");
+    background-size: cover;
+    background-repeat: round;
+    padding: 10px 1rem 14px;
+}
+
+.btn-nav:hover,
+.btn-nav:focus,
+.btn-home:hover,
+.btn-home:focus,
+.btn:hover,
+.btn:focus {
+    //background-image: url("");
+}
+
+.btn-alt {
+    color: v.$color-white;
+    text-shadow: 1px 1px 0 v.$color-primary, -1px -1px 0 v.$color-primary, 1px -1px 0 v.$color-primary, -1px 1px 0 v.$color-primary;
+    font-weight: bold;
+    padding: 10px 1rem 14px;
+    //background-image: url("");
+    background-size: contain;
+    background-repeat: round;
+    cursor: pointer;
+}
+
+.btn-alt:hover,
+.btn-alt:focus {
+    //background-image: url("");
+}
+
+.btn-warming {
+    padding: 10px 2rem 14px;
+}
+
+.reset-btn {
+    flex: 0 0 auto;
+    padding: 9px 12px 16px;
+    cursor: pointer;
+    background-color: transparent;
+    //background-image: url("");
+    background-size: contain;
+    background-repeat: round;
+    border: none;
+    color: v.$color-white;
+
+    .redo-icon {
+        text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+    }
+    transition: all 0.2s ease-in-out;
+}
+
+.reset-btn:hover {
+    //background-image: url("");
+}

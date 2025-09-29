@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ userUpdateForm ? "Modification du Compte" : "Creation du Compte" }}{% endblock %}
+
+{% block body %}
+    <div id="form">
+        <div class="form">
+            <div class="form-content">
+                <div class="mix">
+                    <figure>
+                        <img src="{{ userUpdateForm ? asset('assets/images/tonImage.png') :  asset('assets/images/tonImage.png') }}" alt="">
+                    </figure>
+
+                    <div class="headline">
+                        <h2 class="text-headline">{{ site.name }}</h2>
+                        <h3 class="text-subheadline">{{ userUpdateForm ? "Modification du Compte" : "Creation du Compte" }}</h3>
+                    </div>
+                </div>
+                {{ form_start(userCreateForm, { attr: { class: 'all-form' } }) }}
+{#                <span>#}
+{#                    <label for="{{ userCreateForm.pseudo.vars.id }}">#}
+{#                        Nom d'utilisateur#}
+{#                    </label>#}
+{#                    {% if userUpdateForm %}#}
+{#                        <div class="input-reset-inline">#}
+{#                            {{ form_widget(userCreateForm.pseudo, {#}
+{#                                attr: {#}
+{#                                    'data-original': userCreateForm.pseudo.vars.value#}
+{#                                }#}
+{#                            }) }}#}
+{#                            <button type="button" class="reset-btn"><i class='fas fa-undo redo-icon'></i></button>#}
+{#                        </div>#}
+{#                    {% else %}#}
+{#                        {{ form_widget(userCreateForm.pseudo) }}#}
+{#                    {% endif %}#}
+{#                </span>#}
+                <span>
+                    <label for="{{ userCreateForm.email.vars.id }}">
+                        Email
+                    </label>
+                    {% if userUpdateForm %}
+                        <div class="input-reset-inline">
+                            {{ form_widget(userCreateForm.email, {
+                                attr: {
+                                    'data-original': userCreateForm.email.vars.value
+                                }
+                            }) }}
+                            <button type="button" class="reset-btn"><i class='fas fa-undo redo-icon'></i></button>
+                        </div>
+                    {% else %}
+                        {{ form_widget(userCreateForm.email) }}
+                    {% endif %}
+                </span>
+                <span class="form-group">
+                    {{ form_label(userCreateForm.plainPassword.first) }}
+                    {{ form_widget(userCreateForm.plainPassword.first) }}
+                    <div class="form-error">
+                        {{ form_errors(userCreateForm.plainPassword.first) }}
+                    </div>
+                </span>
+                <span class="form-group">
+                    {{ form_label(userCreateForm.plainPassword.second) }}
+                    {{ form_widget(userCreateForm.plainPassword.second) }}
+                    <div class="form-error">
+                        {{ form_errors(userCreateForm.plainPassword.second) }}
+                    </div>
+                </span>
+
+                <input class="btn btn-lg btn-primary" type="submit" value="Validez">
+                {{ form_end(userCreateForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
